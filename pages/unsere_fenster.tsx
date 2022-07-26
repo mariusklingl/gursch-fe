@@ -20,7 +20,14 @@ export default function UnserFenster<NextPage>() {
             </div>
           </div>
           <div className="relative m-20 shaddow-image">
-            <Image src="/fensterPicture.png" className=" absolute" objectFit="cover" height={587} width={650} />
+            <Image
+              priority
+              src="/fensterPicture.png"
+              className=" absolute"
+              objectFit="cover"
+              height={587}
+              width={650}
+            />
           </div>
         </div>
       </div>

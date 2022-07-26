@@ -8,13 +8,13 @@ export default function NavBar() {
 
   return (
     <div className="fixed z-30 bottom-5 left-0 right-0 flex justify-center">
-      <div className="p-2 bg-black/60 backdrop-blur-sm rounded-full text-white text-xs md:text-xl flex space-x-2 md:space-x-7 font-thin shadow-xl">
+      <div className="p-2 bg-black/60 backdrop-blur-sm rounded-full text-white text-sm md:text-xl flex space-x-2 md:space-x-7 font-thin shadow-xl">
         <Link href="/" passHref>
           <button
             className={`${
               router.asPath === "/"
-                ? "bg-white rounded-full px-4 py-1 text-black"
-                : "bg-transparent rounded-full px-4 py-1 text-white"
+                ? "bg-white rounded-full px-2 md:px-4 py-1 text-black"
+                : "bg-transparent rounded-full px-2 md:px-4 py-1 text-white"
             }`}
           >
             Home
@@ -24,8 +24,8 @@ export default function NavBar() {
           <button
             className={`${
               router.asPath === "/#leistungen"
-                ? "bg-white rounded-full px-4 py-1 text-black"
-                : "bg-transparent rounded-full px-4 py-1 text-white"
+                ? "bg-white rounded-full px-2 md:px-4 py-1 text-black"
+                : "bg-transparent rounded-full px-2 md:px-4 py-1 text-white"
             } `}
           >
             Leistungen
@@ -35,8 +35,8 @@ export default function NavBar() {
           <button
             className={`${
               router.asPath === "/ueber_uns"
-                ? "bg-white rounded-full px-4 py-1 text-black"
-                : "bg-transparent rounded-full px-4 py-1 text-white"
+                ? "bg-white rounded-full px-2 md:px-4 py-1 text-black"
+                : "bg-transparent rounded-full px-2 md:px-4 py-1 text-white"
             } `}
           >
             Über uns
@@ -46,8 +46,8 @@ export default function NavBar() {
           <button
             className={`${
               router.asPath === "/unsere_fenster"
-                ? "bg-white rounded-full px-4 py-1 text-black"
-                : "bg-transparent rounded-full px-4 py-1 text-white"
+                ? "bg-white rounded-full px-2 md:px-4 py-1 text-black"
+                : "bg-transparent rounded-full px-2 md:px-4 py-1 text-white"
             } `}
           >
             Fenster

@@ -7,20 +7,15 @@ import ReferenzElement from "../components/ReferenzElement";
 import axios from "axios";
 import { AllReferenzResponse } from "../types/api.types";
 import Badge from "../components/Badge";
-import {useRouter} from 'next/router'
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
   useEffect(() => {
-    let getData = async () => {
-      let { data }: { data: AllReferenzResponse } = await axios.get(
-        "http://localhost:1337/api/referenzs?fields=ObjektName&populate=Bilder"
-      );
-      console.log(data);
-    };
+    let getData = async () => {};
     getData();
   }, []);
 
-  const router = useRouter()
+  const router = useRouter();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -29,7 +24,14 @@ const Home: NextPage = () => {
   return (
     <div className="bg-black">
       <div className="heroSection min-h-screen relative">
-        <Image src="/hero.jpg" layout="fill" objectFit="cover" className="z-10 opacity-[0.15]" />
+        <Image
+          priority
+          loading="eager"
+          src="/hero.jpg"
+          layout="fill"
+          objectFit="cover"
+          className="z-10 opacity-[0.15]"
+        />
         <div className="absolute top-0 left-0 right-0 bottom-0 z-10 flex items-center p-16">
           <div>
             <h1 className="text-white max-w-4xl text-3xl md:text-4xl lg:text-6xl font-light leading-tight">
@@ -101,7 +103,10 @@ const Home: NextPage = () => {
                 Deshalb sind wir froh Ihnen unsere Erfahrungen mit der ganzen Palette an Fenstern unterbreiten zu können
                 und sind uns sicher, dass wir die geeigneten Lösungen für Sie finden.
               </p>
-              <button onClick={()=>router.push('/unsere_fenster')} className="px-6 py-2 text-sm md:text-md lg:text-2xl font-light bg-[#39291D] rounded-md text-white">
+              <button
+                onClick={() => router.push("/unsere_fenster")}
+                className="px-6 py-2 text-sm md:text-md lg:text-2xl font-light bg-[#39291D] rounded-md text-white"
+              >
                 Zu unseren Modellen
               </button>
             </div>
@@ -122,7 +127,7 @@ const Home: NextPage = () => {
         <div className="refrenzenContainer grid grid-cols-12 gap-6 p-16">
           <div className="col-span-12 md:col-span-6 h-[450px]  rounded-lg shadow-xl">
             <Carousel showStatus={false} showThumbs={false} className="h-[450px] ">
-              <ReferenzElement
+              {/* <ReferenzElement
                 blurDataUrl="http://127.0.0.1:1337/uploads/thumbnail_back_new1_589eb2f30f.jpg"
                 highQualityUrl="http://127.0.0.1:1337/uploads/back_new1_589eb2f30f.jpg"
                 objektName="Feuerbach , Bauträgerprojekt "
@@ -135,61 +140,7 @@ const Home: NextPage = () => {
                 objektName="Feuerbach , Bauträgerprojekt "
                 objektTyp="Bauträger"
                 key={1}
-              />
-              {/* <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement /> */}
-            </Carousel>
-          </div>
-          <div className="col-span-12 md:col-span-6 h-[450px]  rounded-lg shadow-xl">
-            <Carousel showStatus={false} showThumbs={false} className="h-[450px] ">
-              <ReferenzElement
-                blurDataUrl="http://127.0.0.1:1337/uploads/thumbnail_back_new1_589eb2f30f.jpg"
-                highQualityUrl="http://127.0.0.1:1337/uploads/back_new1_589eb2f30f.jpg"
-                objektName="Feuerbach , Bauträgerprojekt "
-                objektTyp="Bauträger"
-                key={1}
-              />
-              <ReferenzElement
-                blurDataUrl="http://127.0.0.1:1337/uploads/thumbnail_back_new1_589eb2f30f.jpg"
-                highQualityUrl="http://127.0.0.1:1337/uploads/back_new1_589eb2f30f.jpg"
-                objektName="Feuerbach , Bauträgerprojekt "
-                objektTyp="Bauträger"
-                key={1}
-              />
-              {/* <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement /> */}
-            </Carousel>
-          </div>
-          <div className="col-span-12 md:col-span-6 h-[450px]  rounded-lg shadow-xl">
-            <Carousel showStatus={false} showThumbs={false} className="h-[450px] ">
-              <ReferenzElement
-                blurDataUrl="http://127.0.0.1:1337/uploads/thumbnail_back_new1_589eb2f30f.jpg"
-                highQualityUrl="http://127.0.0.1:1337/uploads/back_new1_589eb2f30f.jpg"
-                objektName="Feuerbach , Bauträgerprojekt "
-                objektTyp="Bauträger"
-                key={1}
-              />
-              <ReferenzElement
-                blurDataUrl="http://127.0.0.1:1337/uploads/thumbnail_back_new1_589eb2f30f.jpg"
-                highQualityUrl="http://127.0.0.1:1337/uploads/back_new1_589eb2f30f.jpg"
-                objektName="Feuerbach , Bauträgerprojekt "
-                objektTyp="Bauträger"
-                key={1}
-              />
-              {/* <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement />
-              <ReferenzElement /> */}
+              /> */}
             </Carousel>
           </div>
         </div>
@@ -198,12 +149,12 @@ const Home: NextPage = () => {
         <div className="px-6 py-12 md:px-12">
           <div className="container mx-auto xl:px-32">
             <div className="grid lg:grid-cols-2 flex items-center">
-              <div className="md:mt-12 lg:mt-0 mb-12 lg:mb-0">
+              <div className="md:mt-12 lg:mt-0 mb-12 lg:mb-0 z-10">
                 <div
                   className="block rounded-lg shadow-lg px-6 py-12 md:px-12 lg:-mr-14"
                   style={{ background: "hsla(0, 0%, 100%, 0.55)", backdropFilter: "blur(30px)" }}
                 >
-                  <h2 className="text-3xl font-bold mb-12">Kontaktiere Sie uns</h2>
+                  <h2 className="text-3xl font-bold mb-12">Kontaktieren Sie uns</h2>
                   <form>
                     <div className="form-group mb-6">
                       <input
@@ -234,7 +185,6 @@ const Home: NextPage = () => {
                         type="checkbox"
                         className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
                         id="exampleCheck87"
-                        checked
                       />
                       <label className="form-check-label inline-block text-gray-800">Kopie an mich senden</label>
                     </div>
@@ -247,11 +197,13 @@ const Home: NextPage = () => {
                   </form>
                 </div>
               </div>
-              <div className="md:mb-12 lg:mb-0">
-                <div className="map-container relative shadow-lg rounded-lg bg-red-50">
+              <div className="md:mb-12 lg:mb-0 ">
+                <div className="relative h-[700px] -z-1 shadow-lg rounded-lg bg-red-50">
                   <iframe
-                    src="http://google.com"
-                    className="left-0 top-0 h-full w-full absolute rounded-lg bg-red-50 z-20"
+                    allowFullScreen
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAVtxo8hrBpDe9QvT7lodyVASeLnMJ7bfA
+                    &q=Gursch+Stuttgart+Feuerbach"
+                    className=" left-0 top-0 bottom-0 -z-1 w-full h-full  absolute rounded-lg "
                   ></iframe>
                 </div>
               </div>

@@ -9,7 +9,7 @@ const UeberUns: NextPage = () => {
           <h1 className="text-3xl text-center font-light">Gursch Immobilien und Fensterbau GmbH</h1>
         </div>
         <div className="flex bg-[#038F5F] pt-5 mt-6 justify-between">
-          <Image src={"/mirko.png"} height={194} width={240} />
+          <Image priority src={"/mirko.png"} height={194} width={240} />
           <div className="flex flex-col text-white justify-evenly mr-5">
             <p className="text-3xl md:text-5xl font-normal">Mirko Gursch</p>
             <p className="text-xl md:text-3xl font-light">Geschäftsführer</p>
@@ -25,7 +25,7 @@ const UeberUns: NextPage = () => {
               <div className="shadow-xl p-5 rounded-md">Fachwirt in der Grundstücks- & Wohnungswirtschaft (IHK)</div>
             </div>
           </div>
-          <div className="mt-12 text-xs md:text-lg font-light">
+          <div className="mt-12 text-md md:text-lg font-light">
             <h2 className="text-xl md:text-3xl font-normal">Über die Firma</h2>
             <p className="italic  mt-4">
               Beratung, Verkauf & Vermietung im Immobilienbereich, Generalunternehmer kompletter Sanierungen, Lieferung
