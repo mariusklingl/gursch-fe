@@ -127,20 +127,20 @@ const Home: NextPage = () => {
         <div className="refrenzenContainer grid grid-cols-12 gap-6 p-16">
           <div className="col-span-12 md:col-span-6 h-[450px]  rounded-lg shadow-xl">
             <Carousel showStatus={false} showThumbs={false} className="h-[450px] ">
-              {/* <ReferenzElement
-                blurDataUrl="http://127.0.0.1:1337/uploads/thumbnail_back_new1_589eb2f30f.jpg"
-                highQualityUrl="http://127.0.0.1:1337/uploads/back_new1_589eb2f30f.jpg"
+              <ReferenzElement
+                blurDataUrl="/hero.jpg"
+                highQualityUrl="/hero.jpg"
                 objektName="Feuerbach , Bauträgerprojekt "
                 objektTyp="Bauträger"
                 key={1}
               />
               <ReferenzElement
-                blurDataUrl="http://127.0.0.1:1337/uploads/thumbnail_back_new1_589eb2f30f.jpg"
-                highQualityUrl="http://127.0.0.1:1337/uploads/back_new1_589eb2f30f.jpg"
+                blurDataUrl="/hero.jpg"
+                highQualityUrl="/hero.jpg"
                 objektName="Feuerbach , Bauträgerprojekt "
                 objektTyp="Bauträger"
                 key={1}
-              /> */}
+              />
             </Carousel>
           </div>
         </div>
