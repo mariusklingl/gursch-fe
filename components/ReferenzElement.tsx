@@ -8,19 +8,14 @@ interface Props {
   blurDataUrl: string;
 }
 
-export default function ReferenzElement({
-  highQualityUrl,
-  objektTyp,
-  objektName,
-  blurDataUrl,
-}: Props) {
+export default function ReferenzElement({ highQualityUrl, objektTyp, objektName, blurDataUrl }: Props) {
   console.log(blurDataUrl, highQualityUrl);
   return (
     <div className="h-[450px] group relative">
-      <div className="z-30 absolute top-0 left-0 right-0 flex p-4 invisible group-hover:visible">
+      <div className="z-30 absolute top-0 left-0 right-0 flex p-4 lg:invisible lg:group-hover:visible">
         <Badge style="referenz" description={objektTyp} />
       </div>
-      <div className="z-30 absolute bottom-0 left-0 right-0 flex p-4 invisible group-hover:visible bg-black/70 rounded-b-lg text-white font-thin">
+      <div className="z-30 absolute bottom-0 left-0 right-0 flex p-4 lg:invisible lg:group-hover:visible bg-black/70 rounded-b-lg text-white font-thin">
         {objektName}
       </div>
       <Image

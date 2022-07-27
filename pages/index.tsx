@@ -8,6 +8,7 @@ import axios from "axios";
 import { AllReferenzResponse } from "../types/api.types";
 import Badge from "../components/Badge";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -38,10 +39,19 @@ const Home: NextPage = () => {
               Ihr kompetenter Partner in Sachen Immobilien und Fensterbau{" "}
             </h1>
             <div className="mt-4 block md:flex space-y-4 md:space-y-0 md:space-x-6 text-lg md:text-xl">
-              <button className="px-6 py-2 bg-[#a9a9a9] rounded-md ">Kontaktieren</button>
-              <button className="px-6 py-2 border-[#a9a9a9] border-[1px] rounded-md text-[#a9a9a9]">
-                Mehr erfahren
-              </button>
+              <Link href="/#kontakt" passHref>
+                <a>
+                  <button className="px-6 py-2 bg-[#a9a9a9] rounded-md ">Kontaktieren</button>
+                </a>
+              </Link>
+
+              <Link href="/#leistungen" passHref>
+                <a>
+                  <button className="px-6 py-2 border-[#a9a9a9] border-[1px] rounded-md text-[#a9a9a9]">
+                    Mehr erfahren
+                  </button>
+                </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -120,7 +130,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="fourthSection min-h-screen bg-white pt-16 relative">
-        <div className="p-16 w-full ">
+        <div id="referenzen" className="p-16 w-full ">
           <h1 className="text-2xl md:text-4xl lg:text-7x font-headLine">Wir lieben was wir tun.</h1>
           <p className="text-sm lg:text-lg ml-4">*eine kleine aber feine Selektion unserer Arbeit</p>
         </div>

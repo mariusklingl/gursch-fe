@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { AiFillFacebook } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
@@ -16,8 +17,21 @@ export default function Footer() {
         <Image src="/logo.webp" height={80} width={200} />
         <p className="font-light text-xl">Gefühl für Werte</p>
         <div className="mt-5 flex space-x-4">
-          <AiFillFacebook className="h-7 w-7 text-black/70" />
-          <MdEmail className="h-7 w-7 text-black/70" />
+          <Link
+            href="https://www.facebook.com/GURSCH-Immobilien-Fensterbau-GmbH-534904726537291/"
+            target="_blank"
+            rel="noreferrer"
+            passHref
+          >
+            <a>
+              <AiFillFacebook className="h-7 w-7 text-black/70" />
+            </a>
+          </Link>
+          <Link href="mailto:info@gursch-gmbh.de">
+            <a>
+              <MdEmail className="h-7 w-7 text-black/70 cursor-pointer" />
+            </a>
+          </Link>
         </div>
         <button
           onClick={() => router.push("/#kontakt")}
@@ -44,11 +58,21 @@ export default function Footer() {
       <div className="mx-auto ">
         <p className="uppercase text-[#038F5F] text-xl">Links</p>
         <div className="text-md font-light">
-          <p>Impressum & Datenschutz</p>
-          <p>Unsere Fenster</p>
-          <p>Über uns</p>
-          <p>Leistungen</p>
-          <p>Referenzen</p>
+          <Link passHref href={"/impressum"}>
+            <a className="cursor-pointer hover:text-[#038f5f] block">Impressum & Datenschutz</a>
+          </Link>
+          <Link passHref href={"/unsere_fenster"}>
+            <a className="cursor-pointer hover:text-[#038f5f] block">Unsere Fenster</a>
+          </Link>
+          <Link passHref href={"/ueber_uns"}>
+            <a className="cursor-pointer hover:text-[#038f5f] block">Über uns</a>
+          </Link>
+          <Link passHref href={"/#leistungen"}>
+            <a className="cursor-pointer hover:text-[#038f5f] block">Leistungen</a>
+          </Link>
+          <Link passHref href={"/#referenzen"}>
+            <a className="cursor-pointer hover:text-[#038f5f] block">Referenzen</a>
+          </Link>
         </div>
       </div>
     </div>
